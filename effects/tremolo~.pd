@@ -1,0 +1,44 @@
+#N canvas 661 22 619 656 10;
+#X obj 151 110 osc~;
+#X obj 151 136 *~;
+#X obj 152 177 clip~ -1 1;
+#X obj 104 276 *~;
+#X text 202 111 <-- Sine wave (between -1 and 1);
+#X text 190 136 <-- Multipled by a positive number X;
+#X text 212 150 (between -X and X);
+#X text 223 177 <-- Trim at -1 and 1;
+#X text 246 205 a square wave as X increases);
+#X text 246 191 (the sine wave tends to become;
+#X text 263 228 <-- Normalize between 0 and 1;
+#X text 146 288 Patch by Pierre Massat \, GuitarExtended \, 2012;
+#X text 143 302 (based on a suggestion by "mod" \, Pure Data forum
+\, 2011);
+#X obj 153 230 *~;
+#X obj 153 259 +~;
+#X obj 186 230 expr 1-$f1;
+#X floatatom 186 259 5 0 0 0 - - -;
+#X text 286 240 and adjust depth;
+#X obj 27 53 knob 32 32 0.5 25 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 66 53 knob 32 32 0 0.5 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 104 53 knob 32 32 1 20 1 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 104 244 inlet~;
+#X text 147 317 Gui added by Geoff;
+#X text 24 34 Rate Depth Shape;
+#X obj 86 303 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 13 0;
+#X connect 3 0 24 0;
+#X connect 13 0 14 0;
+#X connect 14 0 3 1;
+#X connect 15 0 14 1;
+#X connect 15 0 16 0;
+#X connect 18 0 0 0;
+#X connect 19 0 13 1;
+#X connect 19 0 15 0;
+#X connect 20 0 1 1;
+#X connect 21 0 3 0;
+#X coords 0 -1 1 1 120 70 1 20 20;
