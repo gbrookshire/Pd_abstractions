@@ -1,0 +1,19 @@
+#N canvas 666 71 450 300 10;
+#X obj 14 161 samphold~;
+#X obj 65 111 phasor~;
+#X obj 36 46 hsl 128 15 50 44000 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 33 192 quantize~;
+#X obj 36 80 hsl 128 15 2 1024 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X text 108 62 Bit depth;
+#X text 106 27 Time hold;
+#X obj 14 110 inlet~;
+#X obj 33 215 outlet~;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 8 0;
+#X connect 4 0 3 0;
+#X connect 7 0 0 0;
+#X coords 0 -1 1 1 150 80 1 20 20;
