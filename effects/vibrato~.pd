@@ -1,0 +1,38 @@
+#N canvas 266 140 638 500 10;
+#X obj 19 214 vd~ vibrato;
+#X obj 19 168 *~ 1;
+#X obj 19 190 +~ 2;
+#X obj 103 42 delwrite~ vibrato 50;
+#X obj 19 127 osc~ 2;
+#X floatatom 173 221 5 0 0 0 - - -;
+#X obj 173 199 +;
+#X obj 130 173 * 2;
+#X floatatom 19 105 5 0 0 0 - - -;
+#X obj 19 40 knob 32 32 0 10 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 310 1;
+#X text 16 21 Speed;
+#X obj 58 40 knob 32 32 0 10 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text 55 21 Depth;
+#X floatatom 130 137 5 0 0 0 - - -;
+#X obj 19 265 outlet~;
+#X obj 103 18 inlet~;
+#X text 210 222 <-- Maximum length of the delay line (= added latency!)
+;
+#X text 139 288 Pierre Massat \, GuitarExtended \, 2012 Abstraction
+by Geoff;
+#X connect 0 0 14 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 2 1;
+#X connect 7 0 6 0;
+#X connect 8 0 4 0;
+#X connect 9 0 8 0;
+#X connect 11 0 13 0;
+#X connect 13 0 1 1;
+#X connect 13 0 7 0;
+#X connect 13 0 6 1;
+#X connect 15 0 3 0;
+#X coords 0 -1 1 1 85 70 1 10 10;
